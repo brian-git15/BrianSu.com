@@ -1,7 +1,9 @@
 import bgGradient from "@/assets/bg-gradient.jpg";
 import GlassCard from "@/components/GlassCard";
-import { Mail, Github, Linkedin, ArrowUpRight, FileText } from "lucide-react";
+import { Mail, Github, Linkedin, ArrowUpRight, FileText, Moon, Sun } from "lucide-react";
 import ExperienceMenu from "@/components/ExperienceMenu";
+import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
 
 const links = [
   { label: "GitHub", icon: Github, href: "https://github.com/brian-git15" },
@@ -13,11 +15,20 @@ const links = [
 
 
 const Index = () => {
+  const { theme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const bgImage = mounted && theme === "dark" ? "/dark_mode.jpg" : bgGradient;
+
   return (
     <div className="relative min-h-screen overflow-hidden">
       {/* Background */}
       <img
-        src={bgGradient}
+        src={bgImage}
         alt=""
         className="fixed inset-0 h-full w-full object-cover"
         aria-hidden="true"
@@ -29,9 +40,19 @@ const Index = () => {
         
         {/* Hero */}
         <GlassCard className="w-full text-center flex-shrink-0">
-          <h1 className="text-4xl font-semibold tracking-tight text-foreground">
-            Brian Su
-          </h1>
+          <div className="flex items-center justify-between mb-4">
+            <div></div>
+            <h1 className="text-4xl font-semibold tracking-tight text-foreground flex-1">
+              Brian Su
+            </h1>
+            <button
+              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+              className="glass-subtle inline-flex items-center justify-center px-3 py-2 rounded-md text-muted-foreground hover:text-foreground transition-colors"
+              aria-label="Toggle theme"
+            >
+              {mounted && theme === "dark" ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
+            </button>
+          </div>
           {/* <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
             Embedded SWE @ Nokia, CS + Digital Hardware @ UWaterloo
           </p> */}
