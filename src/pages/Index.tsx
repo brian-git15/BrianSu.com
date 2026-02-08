@@ -1,18 +1,16 @@
 import bgGradient from "@/assets/bg-gradient.jpg";
 import GlassCard from "@/components/GlassCard";
-import { Mail, Github, Linkedin, ArrowUpRight } from "lucide-react";
+import { Mail, Github, Linkedin, ArrowUpRight, FileText } from "lucide-react";
+import ExperienceMenu from "@/components/ExperienceMenu";
 
 const links = [
-  { label: "GitHub", icon: Github, href: "https://github.com" },
-  { label: "LinkedIn", icon: Linkedin, href: "https://linkedin.com" },
-  { label: "Email", icon: Mail, href: "mailto:hello@example.com" },
+  { label: "GitHub", icon: Github, href: "https://github.com/brian-git15" },
+  { label: "LinkedIn", icon: Linkedin, href: "https://www.linkedin.com/in/brian-su-70990a24a/" },
+  { label: "Email", icon: Mail, href: "mailto:B33su@uwaterloo.ca" },
+  { label: "Resume", icon: FileText, href: "https://drive.google.com/file/d/1NTMU4GsfoyuC2NVky5DLriJLqZAc-3Zn/view?usp=drive_link" },
 ];
 
-const projects = [
-  { title: "Project Alpha", description: "A design system built for clarity." },
-  { title: "Project Beta", description: "Mobile-first commerce experience." },
-  { title: "Project Gamma", description: "Real-time data visualization tool." },
-];
+
 
 const Index = () => {
   return (
@@ -27,19 +25,16 @@ const Index = () => {
       <div className="fixed inset-0 bg-background/30" aria-hidden="true" />
 
       {/* Content */}
-      <div className="relative z-10 mx-auto flex min-h-screen max-w-2xl flex-col items-center justify-center gap-6 px-6 py-20">
+      <div className="relative z-10 mx-auto flex max-w-2xl flex-col items-center gap-6 px-6 py-20">
         
         {/* Hero */}
-        <GlassCard className="w-full text-center">
-          <div className="mb-4 inline-flex h-20 w-20 items-center justify-center rounded-full bg-primary/10 text-3xl font-semibold text-primary">
-            JD
-          </div>
-          <h1 className="text-2xl font-semibold tracking-tight text-foreground">
-            Jane Doe
+        <GlassCard className="w-full text-center flex-shrink-0">
+          <h1 className="text-4xl font-semibold tracking-tight text-foreground">
+            Brian Su
           </h1>
-          <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-            Designer & developer crafting minimal, human‑centered digital experiences.
-          </p>
+          {/* <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+            Embedded SWE @ Nokia, CS + Digital Hardware @ UWaterloo
+          </p> */}
 
           {/* Social links */}
           <div className="mt-5 flex items-center justify-center gap-3">
@@ -49,34 +44,16 @@ const Index = () => {
                 href={link.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="glass-subtle inline-flex h-10 w-10 items-center justify-center rounded-xl text-muted-foreground transition-colors hover:text-foreground"
+                className="glass-subtle inline-flex items-center justify-center px-3 py-2 rounded-md text-muted-foreground transition-colors hover:text-foreground"
                 aria-label={link.label}
               >
-                <link.icon className="h-4 w-4" />
+                <link.icon className="h-5 w-5" />
               </a>
             ))}
           </div>
         </GlassCard>
 
-        {/* Projects */}
-        <div className="grid w-full gap-3">
-          {projects.map((project) => (
-            <GlassCard
-              key={project.title}
-              className="group flex cursor-pointer items-center justify-between transition-transform hover:-translate-y-0.5"
-            >
-              <div>
-                <h2 className="text-sm font-medium text-foreground">
-                  {project.title}
-                </h2>
-                <p className="mt-0.5 text-xs text-muted-foreground">
-                  {project.description}
-                </p>
-              </div>
-              <ArrowUpRight className="h-4 w-4 text-muted-foreground transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-foreground" />
-            </GlassCard>
-          ))}
-        </div>
+        <ExperienceMenu />
       </div>
     </div>
   );

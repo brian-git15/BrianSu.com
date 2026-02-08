@@ -1,17 +1,21 @@
 import { cn } from "@/lib/utils";
-import { ReactNode } from "react";
+import React, { forwardRef, ReactNode } from "react";
 
-interface GlassCardProps {
+interface GlassCardProps extends React.HTMLAttributes<HTMLDivElement> {
   children: ReactNode;
   className?: string;
 }
 
-const GlassCard = ({ children, className }: GlassCardProps) => {
-  return (
-    <div className={cn("glass rounded-2xl p-6", className)}>
-      {children}
-    </div>
-  );
-};
+const GlassCard = forwardRef<HTMLDivElement, GlassCardProps>(
+  ({ children, className, ...props }, ref) => {
+    return (
+      <div ref={ref} className={cn("glass rounded-2xl p-6", className)} {...props}>
+        {children}
+      </div>
+    );
+  }
+);
+
+GlassCard.displayName = "GlassCard";
 
 export default GlassCard;
