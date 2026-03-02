@@ -75,6 +75,17 @@ const Index = () => {
         </GlassCard>
 
         <ExperienceMenu />
+        {/* <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+          <a href='https://cs.uwatering.com/#your-site-here?nav=prev'>←</a>
+          <a href='https://cs.uwatering.com/#your-site-here' target='_blank'>
+              <img
+                  src={theme === 'dark' ? 'https://cs.uwatering.com/icon.white.svg' : 'https://cs.uwatering.com/icon.black.svg'}
+                  alt='CS Webring'
+                  style={{ width: '24px', height: 'auto', opacity: 0.8 }}
+              />
+          </a>
+          <a href='https://cs.uwatering.com/#your-site-here?nav=next'>→</a>
+        </div> */}
       </div>
     </div>
   );
