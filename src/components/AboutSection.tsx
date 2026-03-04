@@ -47,7 +47,7 @@ const AboutSection = () => {
             Hi, I'm Brian — embedded software engineer and second-year computer science student. I'm at Nokia's Ottawa office this term; if you're in the area, say hi!
           </p>
           <p className="text-sm font-medium text-foreground leading-relaxed">
-            Outside of work I'm a singer and songwriter (still growing there), ex-varsity athlete, and current running enthusiast.
+            Outside of work I'm a singer and songwriter (still working on it), ex-varsity athlete, and current running enthusiast.
           </p>
         </div>
       </div>
