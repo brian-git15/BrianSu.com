@@ -1,0 +1,10 @@
+# Workspace-local Python dependencies
+#
+# Usage:
+#   python -m venv .venv
+#   .venv\Scripts\activate
+#   pip install -r requirements.txt
+#
+# Add project-specific Python packages below, for example:
+# requests==2.32.3
+# fastapi==0.115.0
