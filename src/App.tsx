@@ -4,6 +4,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { HashRouter, Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "next-themes";
+import { Analytics } from "@vercel/analytics/react";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import BlogPost from "./pages/BlogPost";
@@ -24,6 +25,7 @@ const App = () => (
             <Route path="*" element={<NotFound />} />
           </Routes>
         </HashRouter>
+        <Analytics />
       </TooltipProvider>
     </QueryClientProvider>
   </ThemeProvider>
