@@ -8,7 +8,9 @@ const projects = [
     title: "Arbittron",
     description:
       "Live DraftKings/FanDuel arbitrage with optimal stakes, 3D opportunity viz, and a Databricks transformer — Hacklytics 2026.",
-    details: `Arbittron is a real-time sports betting arbitrage engine built in 36 hours. It ingests live odds from DraftKings and FanDuel, spots pricing gaps across markets, and computes stake splits that lock in profit regardless of outcome. Opportunities show up in an interactive 3D scatter plot (filter by return, implied-probability spread, liquidity), backed by a sequence-based transformer trained and served on Databricks. Stack: React, Three.js, FastAPI, PyTorch, Apache Spark.`,
+    details: `Arbittron is more than a sports betting arbitrage calculator. It's a real-time opportunity engine designed to detect and quantify pricing inequalities across sportsbooks. By taking live odds from platforms such as DraftKings and FanDuel, Arbittron instantly identifies arbitrage windows and calculates the precise stake allocation required on each side to mathematically lock in profit, regardless of the outcome.
+
+`,
     youtube: "https://www.youtube.com/watch?v=B8H1KTTGZHE",
     github: "https://github.com/Kurtis24/Hackalytics_Repo",
   },
