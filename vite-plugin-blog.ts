@@ -7,7 +7,13 @@ const BLOG_DIR = path.resolve(process.cwd(), "src/content/blog");
 const VIRTUAL_ID = "virtual:blog-posts";
 const RESOLVED_ID = "\0" + VIRTUAL_ID;
 
-function loadBlogPosts(): Array<{ slug: string; title: string; date?: string; content: string }> {
+function loadBlogPosts(): Array<{
+  slug: string;
+  title: string;
+  date?: string;
+  comments: boolean;
+  content: string;
+}> {
   if (!fs.existsSync(BLOG_DIR)) return [];
   const files = fs.readdirSync(BLOG_DIR).filter((f) => f.endsWith(".md") || f.endsWith(".txt"));
   const posts = files.map((file) => {
@@ -19,6 +25,7 @@ function loadBlogPosts(): Array<{ slug: string; title: string; date?: string; co
       slug,
       title: (data.title as string) ?? slug,
       date: data.date as string | undefined,
+      comments: data.comments !== false,
       content,
     };
   });

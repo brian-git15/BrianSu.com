@@ -6,6 +6,7 @@ import { ArrowLeft } from "lucide-react";
 import { getPostBySlug } from "@/lib/blog";
 import type { BlogPost as BlogPostType } from "@/lib/blog";
 import GlassCard from "@/components/GlassCard";
+import BlogComments from "@/components/BlogComments";
 import bgGradient from "@/assets/bg-gradient.jpg";
 import { useTheme } from "next-themes";
 
@@ -141,6 +142,7 @@ const BlogPost = () => {
                   {post.content}
                 </ReactMarkdown>
               </div>
+              {post.comments && <BlogComments key={slug} />}
             </article>
           </GlassCard>
         )}
