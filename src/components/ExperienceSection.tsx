@@ -2,11 +2,6 @@ import GlassCard from "@/components/GlassCard";
 
 const currExperiances = [
   {
-    title: "Embedded SWE @ Nokia",
-    description: "Building a data analytics tool for the TCAM chip and compiler bitfield testbench",
-    logo: "/nokia_logo.jpg",
-  },
-  {
     title: "CS @ Uwaterloo",
     description: "Honours Computer Science Specialized in Digital Hardware",
     logo: "/waterloo_logo.jpg",
@@ -14,6 +9,11 @@ const currExperiances = [
 ];
 
 const prevExperiances = [
+  {
+    title: "Embedded SWE @ Nokia",
+    description: "Building a data analytics tool for the TCAM chip and compiler bitfield testbench",
+    logo: "/nokia_logo.jpg",
+  },
   {
     title: "SWE @ Airfairness",
     description: "Slaying flight delays with AI, built the backend for +2000 users",
