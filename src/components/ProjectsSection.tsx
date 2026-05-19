@@ -5,6 +5,16 @@ import { ChevronDown, ExternalLink, Github } from "lucide-react";
 
 const projects = [
   {
+    title: "NounwindLTO",
+    description:
+      "LLVM pass plugin that infers and applies nounwind at module/LTO scope, then lowers provably non-throwing invoke instructions to call + br to simplify exception handling control flow.",
+    details: `Computes an interprocedural unwind lattice (Safe, Unknown, Throwing) over call graph SCCs. Marks defined functions as nounwind when analysis proves they cannot unwind. Conservatively handles unresolved/indirect calls and unknown external declarations.
+Applies embedded runtime symbol policy for common Itanium/libc++ EH helper names.
+
+`,
+    github: "https://github.com/brian-git15/riscvprune",
+  },
+  {
     title: "Arbittron",
     description:
       "Live DraftKings/FanDuel arbitrage with optimal stakes, 3D opportunity viz, and a Databricks transformer — Hacklytics 2026.",
