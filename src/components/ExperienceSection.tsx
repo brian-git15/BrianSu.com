@@ -2,6 +2,11 @@ import GlassCard from "@/components/GlassCard";
 
 const currExperiances = [
   {
+    title: "DSP Firmware Engineer @ Nokia",
+    description: "Incoming Fall 2026",
+    logo: "/nokia_logo.jpg",
+  },
+  {
     title: "CS @ Uwaterloo",
     description: "Honours Computer Science Specialized in Digital Hardware",
     logo: "/waterloo_logo.jpg",
