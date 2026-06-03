@@ -15,16 +15,6 @@ Applies embedded runtime symbol policy for common Itanium/libc++ EH helper names
     github: "https://github.com/brian-git15/riscvprune",
   },
   {
-    title: "Arbittron",
-    description:
-      "Live DraftKings/FanDuel arbitrage with optimal stakes, 3D opportunity viz, and a Databricks transformer — Hacklytics 2026.",
-    details: `Arbittron is more than a sports betting arbitrage calculator. It's a real-time opportunity engine designed to detect and quantify pricing inequalities across sportsbooks. By taking live odds from platforms such as DraftKings and FanDuel, Arbittron instantly identifies arbitrage windows and calculates the precise stake allocation required on each side to mathematically lock in profit, regardless of the outcome.
-
-`,
-    youtube: "https://www.youtube.com/watch?v=B8H1KTTGZHE",
-    github: "https://github.com/Kurtis24/Hackalytics_Repo",
-  },
-  {
     title: "SLiM",
     description: "A real time Small Language Model generation factory that learns from your LLM and creates lightweight models to fit your hyperspecialized needs without draining credits",
     details: `SLiM (Small Language Model) is a pipeline that ingests fine-tuning data from user interactions, trains compact models, and serves them with very low latency. It includes model distillation, quantization, and an autopruning step to keep size and compute minimal.
@@ -33,6 +23,34 @@ Applies embedded runtime symbol policy for common Itanium/libc++ EH helper names
 Mock notes: currently supports basic text generation and retrieval-augmented generation demos.`,
     youtube: "https://www.youtube.com/watch?v=Rhxzl5RAJs4",
     github: "https://github.com/AyanSanaullah/SLiM",
+  },
+  {
+    title: "Kin — Household Financial Guardian (TechTO 2026)",
+    description:
+      "Built the MCP server for Kin, a hackathon agent that watches a household's accounts and acts before money problems happen — exposing the full Convex backend to Cursor and routing inbound SMS through an LLM tool-planner.",
+    details: `Kin is a 12-hour TechTO hackathon project: a "Ring-camera for your money" that sees across both partners' banks, the joint account, and an inbox of agreements, then proposes one-tap actions (draft an e-transfer, move funds from savings, place a TTS call) when it forecasts an overdraft.
+
+My contribution: the MCP server (kin/mcp-server) — a stdio Model Context Protocol server that turns every public Convex function into an MCP tool so Cursor (or any MCP client) can read household data, run the agent, and process inbound SMS the same way production does.
+
+What it does:
+- Auto-registers 40+ convex_* tools (reads like getAccounts/getTransactions/getAgreements/getForecast, and writes/actions like seedDemo, runDetection, moveMoney, chatReply, runAgent, sendSms).
+- Mirrors the Twilio inbound-SMS pipeline as three MCP tools: kin_route_inbound_sms (dry-run plan via Backboard LLM), kin_handle_inbound_sms (full pipeline — feed card, Backboard reply, Twilio send), and kin_execute_tool_plan (run a custom ordered list of convex_* tools).
+- Uses Backboard LLM for semantic tool routing on inbound SMS, with a keyword-rules fallback (smsRouter.ts) when the LLM plan fails.
+- Dispatches tool calls through a ConvexHttpClient and exposes a kin://tool-catalog MCP resource so clients can discover the live tool surface.
+- Ships with offline + live smoke tests (bun run test, bun run test:live) and a Cursor mcp.json example for one-step setup.
+
+Stack: TypeScript, Bun, Model Context Protocol SDK, Convex (HTTP client), Backboard (LLM gateway + memory), Twilio (SMS).`,
+    github: "https://github.com/Kurtis24/TechTO",
+  },
+  {
+    title: "Arbittron",
+    description:
+      "Live DraftKings/FanDuel arbitrage with optimal stakes, 3D opportunity viz, and a Databricks transformer — Hacklytics 2026.",
+    details: `Arbittron is more than a sports betting arbitrage calculator. It's a real-time opportunity engine designed to detect and quantify pricing inequalities across sportsbooks. By taking live odds from platforms such as DraftKings and FanDuel, Arbittron instantly identifies arbitrage windows and calculates the precise stake allocation required on each side to mathematically lock in profit, regardless of the outcome.
+
+`,
+    youtube: "https://www.youtube.com/watch?v=B8H1KTTGZHE",
+    github: "https://github.com/Kurtis24/Hackalytics_Repo",
   },
   {
     title: "NanoWorks",
