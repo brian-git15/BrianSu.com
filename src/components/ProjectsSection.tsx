@@ -32,13 +32,6 @@ Mock notes: currently supports basic text generation and retrieval-augmented gen
 
 My contribution: the MCP server (kin/mcp-server) — a stdio Model Context Protocol server that turns every public Convex function into an MCP tool so Cursor (or any MCP client) can read household data, run the agent, and process inbound SMS the same way production does.
 
-What it does:
-- Auto-registers 40+ convex_* tools (reads like getAccounts/getTransactions/getAgreements/getForecast, and writes/actions like seedDemo, runDetection, moveMoney, chatReply, runAgent, sendSms).
-- Mirrors the Twilio inbound-SMS pipeline as three MCP tools: kin_route_inbound_sms (dry-run plan via Backboard LLM), kin_handle_inbound_sms (full pipeline — feed card, Backboard reply, Twilio send), and kin_execute_tool_plan (run a custom ordered list of convex_* tools).
-- Uses Backboard LLM for semantic tool routing on inbound SMS, with a keyword-rules fallback (smsRouter.ts) when the LLM plan fails.
-- Dispatches tool calls through a ConvexHttpClient and exposes a kin://tool-catalog MCP resource so clients can discover the live tool surface.
-- Ships with offline + live smoke tests (bun run test, bun run test:live) and a Cursor mcp.json example for one-step setup.
-
 Stack: TypeScript, Bun, Model Context Protocol SDK, Convex (HTTP client), Backboard (LLM gateway + memory), Twilio (SMS).`,
     github: "https://github.com/Kurtis24/TechTO",
   },
