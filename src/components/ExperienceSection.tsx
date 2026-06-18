@@ -9,7 +9,7 @@ const currExperiances = [
   {
     title: "Robotics Reaserch Assistant @ Elixir Labs",
     description: "Incoming Fall 2026",
-    logo: "/elixir_labs_logo.jpg",
+    logo: "/elixir_labs_logo.png",
   },
   {
     title: "CS @ Uwaterloo",
