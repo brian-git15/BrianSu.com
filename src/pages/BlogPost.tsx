@@ -86,7 +86,7 @@ const BlogPost = () => {
         {post === null && (
           <GlassCard className="p-6">
             <Link
-              to="/"
+              to="/?tab=about"
               className="mb-4 inline-flex items-center gap-2 text-sm text-foreground hover:underline"
             >
               <ArrowLeft className="h-4 w-4" /> Back
@@ -97,9 +97,9 @@ const BlogPost = () => {
         {post != null && post !== undefined && (
           <GlassCard className="p-6">
             <Link
-              to="/"
+              to="/?tab=about"
               className="mb-6 inline-flex items-center gap-2 text-sm font-medium text-foreground hover:underline"
-              aria-label="Back to home"
+              aria-label="Back to about"
             >
               <ArrowLeft className="h-4 w-4" /> Back
             </Link>

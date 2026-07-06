@@ -1,15 +1,30 @@
-import { useState } from "react";
+import { useSearchParams } from "react-router-dom";
 import ExperienceSection from "@/components/ExperienceSection";
 import ProjectsSection from "@/components/ProjectsSection";
 import AboutSection from "@/components/AboutSection";
 import ResumeSection from "@/components/ResumeSection";
 
-const ExperienceMenu = () => {
-  const [tab, setTab] = useState<"experience" | "projects" | "about" | "resume">("experience");
+type Tab = "experience" | "projects" | "about" | "resume";
 
-  const TabButton = ({ id, label }: { id: "experience" | "projects" | "about" | "resume"; label: string }) => (
+const isValidTab = (value: string | null): value is Tab =>
+  value === "experience" || value === "projects" || value === "about" || value === "resume";
+
+const ExperienceMenu = () => {
+  const [searchParams, setSearchParams] = useSearchParams();
+  const tabParam = searchParams.get("tab");
+  const tab: Tab = isValidTab(tabParam) ? tabParam : "experience";
+
+  const selectTab = (id: Tab) => {
+    if (id === "experience") {
+      setSearchParams({}, { replace: true });
+    } else {
+      setSearchParams({ tab: id }, { replace: true });
+    }
+  };
+
+  const TabButton = ({ id, label }: { id: Tab; label: string }) => (
     <button
-      onClick={() => setTab(id)}
+      onClick={() => selectTab(id)}
       className={`px-3 py-1 rounded-md text-sm font-medium transition-colors ${tab === id ? "bg-foreground text-background" : "bg-muted/10 text-foreground"}`}
     >
       {label}
