@@ -29,7 +29,7 @@ const ExperienceMenu = () => {
         {tab === "experience" && <ExperienceSection />}
         {tab === "projects" && <ProjectsSection />}
         {tab === "about" && <AboutSection />}
-        {tab === "resume" && <ResumeSection/>}
+        {/* {tab === "resume" && <ResumeSection/>} */}
       </div>
     </div>
   );
