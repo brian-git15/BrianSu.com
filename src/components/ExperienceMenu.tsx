@@ -37,7 +37,7 @@ const ExperienceMenu = () => {
         <TabButton id="experience" label="Experience" />
         <TabButton id="projects" label="Projects" />
         <TabButton id="about" label="About" />
-        <TabButton id="resume" label="Resume"/>
+        {/* <TabButton id="resume" label="Resume"/> */}
       </div>
 
       <div className="mt-3">
