@@ -66,11 +66,6 @@ Mock notes: includes a sample gallery and an automated validator for foldability
     youtube: "https://www.youtube.com/watch?v=N8X2oWvuaNU",
     github: "https://github.com/Kurtis24/Terrahacks-Hackathon/tree/main?tab=readme-ov-file",
   },
-  {
-    title: "FlowScan",
-    description: "A CFD generation tool taking advantage of AI to autofill meshs",
-    details: `In progress`,
-  },
 ];
 
 const ProjectsSection = () => {
