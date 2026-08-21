@@ -5,6 +5,17 @@ import { ChevronDown, ExternalLink, Github } from "lucide-react";
 
 const projects = [
   {
+    title: "AVLIX",
+    description:
+      "AVLIX is a Rubik’s Cube-inspired puzzle game where instead of twisting cube faces, you perform AVL tree rotations to transform and balance the tree.",
+    details: `A Rubik’s Cube for binary trees: in-order stays sorted while only the shape changes. Modes include a Tutorial for balance factors and rotations, a Campaign of curated levels with optimal par and stars, and Free Play with random scrambles.
+
+Live at avlix.vercel.app.`,
+    image: "/AVLIX.png",
+    demo: "https://avlix.vercel.app/",
+    github: "https://github.com/brian-git15/AVLIX",
+  },
+  {
     title: "NounwindLTO",
     description:
       "LLVM pass plugin that infers and applies nounwind at module/LTO scope, then lowers provably non-throwing invoke instructions to call + br to simplify exception handling control flow.",
@@ -88,6 +99,16 @@ const ProjectsSection = () => {
           </CollapsibleTrigger>
           <CollapsibleContent className="mt-2">
             <GlassCard className="p-4 bg-muted/5">
+              {p.image && (
+                <div className="w-full overflow-hidden rounded-md">
+                  <img
+                    src={p.image}
+                    alt={`${p.title} preview`}
+                    className="w-full h-auto object-contain"
+                  />
+                </div>
+              )}
+
               {p.youtube && (() => {
                 const getYouTubeId = (url: string) => {
                   try {
@@ -128,6 +149,18 @@ const ProjectsSection = () => {
                 <strong>Summary:</strong> {p.description}
               </div>
               <div className="mt-3 flex items-center gap-4">
+                {p.demo && (
+                  <a
+                    href={p.demo}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-sm text-foreground hover:underline"
+                  >
+                    <ExternalLink className="h-4 w-4" />
+                    Play live
+                  </a>
+                )}
+
                 {p.youtube && (
                   <a
                     href={p.youtube}
